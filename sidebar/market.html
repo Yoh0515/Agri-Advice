@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agri-Advice</title>
+  <link rel="stylesheet" href="/assets/css/market.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="/assets/img/logo.png">
+    <a href="index.html" >
+        <span class="material-symbols-outlined">dashboard</span>
+        <h3>Dashboard</h3>
+    </a>
+    <a href="plant.html">
+      <span class="material-symbols-outlined">potted_plant</span>
+      <h3>Planting Guidance</h3>
+    </a>
+    <a href="pest.html">
+      <span class="material-symbols-outlined">emoji_nature</span>
+      <h3>Pest and Disease</h3>
+    </a>
+    <a href="news.html">
+      <span class="material-symbols-outlined">newspaper</span>
+      <h3>News Update</h3>
+    </a>
+    <a href="weather.html">
+      <span class="material-symbols-outlined">partly_cloudy_day</span>
+      <h3>Weather Update</h3>
+    </a>
+    <a href="market.html" class="active">
+      <span class="material-symbols-outlined">storefront</span>
+      <h3>Marketplace</h3>
+    </a>
+    <a href="vendors.html">
+        <span class="material-symbols-outlined">groups</span>
+        <h3>Vendors</h3>
+    </a>
+    <a href="#">
+      <span class="material-symbols-outlined">monitoring</span>
+      <h3>Price List</h3>
+    </a>
+    <a href="message.html">
+      <span class="material-symbols-outlined">chat</span>
+      <h3>Messages</h3>
+      <span class="message_count">14</span>
+    </a>
+    <a href="archieve.html">
+        <span class="material-symbols-outlined">archive</span>
+        <h3>Archive</h3>
+    </a>
+    <a id="logoutButton" href="#">
+      <span class="material-symbols-outlined">logout</span>
+      <h3>Logout</h3>
+    </a>
+  </div>
+  <div class="sidebar1">
+    <div class="menu">
+      <div id="productList">
+        <h3 id="fApprove">For Approval</h3>
+        <div id="market"></div>
+        <div class="allproduct">
+          <h3 id="pDeclined">All Product</h3>
+
+          <input type="text" id="searchInput" placeholder="Search for Products, Price, Category, Vendor, Status ...">
+          <div class="search-bar">
+            <ul id="list" class="dropdown-list">
+              <li class="dropdown-list-item">All</li>
+              <li class="dropdown-list-item">Name</li>
+              <li class="dropdown-list-item">Category</li>
+              <li class="dropdown-list-item">Vendor</li>
+              <li class="dropdown-list-item">Approved</li>
+              <li class="dropdown-list-item">Declined</li>
+              <li class="dropdown-list-item">Pending</li>
+            </ul>
+          </div>
+          <div class="subHeader">
+            <div class="header">
+              <h3>Product</h3>
+              <h3>Name</h3>
+              <h3>Price</h3>
+              <h3>Category</h3>
+              <h3>Vendor</h3>
+              <h3>Status</h3>
+            </div>
+            <!-- <div id="listall"></div> -->
+            <div id="allProducts"></div>
+            <ul id="searchProducts"></ul>
+          </div>
+        </div>
+        <h3 id="pApprov">sad</h3>
+        <!-- <div class="approve-declined">
+          <div>
+            <h3 id="pApprove">Approved Product</h3>
+            <div id="approved"></div>
+          </div>
+
+          <div>
+            <h3 id="pDeclined">Declined Product</h3>
+            <div id="declined"></div>
+          </div>
+        </div> -->
+      </div>
+      <div id="categ">
+        <!-- <h3 id="nCateg">Add Categories</h3> -->
+        <form id="textForm">
+          <div id="div">
+            <div id="addCateg">
+              <input type="text" id="textData" placeholder="Add Category">
+              <button id="textButton" type="button" onclick="uploadText()">Upload Category</button>
+            </div>
+          </div>
+          <div id="categResult"></div>
+        </form>
+      </div>
+    </div>
+    <div class="ApprovalProduct"></div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firestore.js"></script>
+<script src="/assets/js/market.js"></script>
+
+</html>

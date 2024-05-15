@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agri-Advice</title>
+  <link rel="stylesheet" href="/assets/css/plant.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+  <div id="sidebar" class="sidebar">
+    <img src="/assets/img/logo.png">
+    <a href="index.html" >
+        <span class="material-symbols-outlined">dashboard</span>
+        <h3>Dashboard</h3>
+    </a>
+    <a href="plant.html" class="active">
+      <span class="material-symbols-outlined">potted_plant</span>
+      <h3>Planting Guidance</h3>
+    </a>
+    <a href="pest.html">
+      <span class="material-symbols-outlined">emoji_nature</span>
+      <h3>Pest and Disease</h3>
+    </a>
+    <a href="news.html">
+      <span class="material-symbols-outlined">newspaper</span>
+      <h3>News Update</h3>
+    </a>
+    <a href="weather.html">
+      <span class="material-symbols-outlined">partly_cloudy_day</span>
+      <h3>Weather Update</h3>
+    </a>
+    <a href="market.html">
+      <span class="material-symbols-outlined">storefront</span>
+      <h3>Marketplace</h3>
+    </a>
+    <a href="vendors.html">
+      <span class="material-symbols-outlined">groups</span>
+      <h3>Vendors</h3>
+    </a>
+    <a href="#">
+      <span class="material-symbols-outlined">monitoring</span>
+      <h3>Price List</h3>
+    </a>
+    <a href="message.html">
+      <span class="material-symbols-outlined">chat</span>
+      <h3>Messages</h3>
+      <span class="message_count">14</span>
+    </a>
+    <a href="archieve.html">
+      <span class="material-symbols-outlined">archive</span>
+      <h3>Archive</h3>
+    </a>
+    <a id="logoutButton" href="#">
+      <span class="material-symbols-outlined">logout</span>
+      <h3>Logout</h3>
+    </a>
+  </div>
+  <div id="sidebar1" class="sidebar1">
+    <div id="background2" class="background2">
+      <button id="backB">Back</button>
+      <div id="detail-display"></div>
+    </div>
+    <div id="background" class="background">
+      <div class="container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <ul id="searchResults"></ul>
+      </div>
+      <button id="showFormButton">Add Plant</button>
+      <div id="plants-container"></div>
+    </div>
+  </div>
+  <div id="add_plant">
+    <h2 class="genInfos">Add Plant</h2>
+    <h2 class="genInfo">General Information</h2>
+    <div id="nameplant">
+      <input type="hidden" class="archieve" id="archieve" >
+      <input type="text" class="gen" id="title" placeholder="Title">
+      <div class="categ">
+        <input type="text" class="gen" id="category" placeholder="Category">
+        <ul id="categoryContainer"></ul>
+      </div>
+      <textarea style="resize: none; height: 70px;" type="text" class="gen" id="description"
+        placeholder="Description"></textarea>
+    </div>
+    <div id="icon_image">
+      <h2 class="iconInfo">Icon</h2>
+      <div class="iconlayout">
+        <span class="metaData"></span>
+        <img src="/assets/img/add.png" class="selectIcon" onclick="selectIcon()">
+        <input type="file" class="icon" id="icon" onchange="getIconData(event)" accept="image/*">
+      </div>
+    </div>
+    <div id="images_plants">
+      <h2 class="imageInfo">Images</h2>
+      <div class="imagelayout">
+        <input type="file" class="images" id="images" onchange="getImageData(event)" accept="image/*" multiple>
+        <span class="imageDa"></span>
+        <button onclick="selectImage()" class="selecImage">Select Image</button>
+      </div>
+    </div>
+    <div class="quick_info">
+      <h2 class="quickinfo">Quick Information</h2>
+      <div class="rangeSlide">
+        <img src="/assets/img/ruler.png" class="ruler">
+        <span id="rangeValue">1/Square</span>
+        <input class="range" type="range" name="" value="5" min="0" max="11"
+          onchange="rangeSlide(parseInt(this.value))">
+      </div>
+      <div class="depth">
+        <img class="deptImg" src="/assets/img/depth.png">
+        <input type="number" class="quick" id="dept" placeholder="Planting depth">
+        <div class="inch">
+          <input type="text" class="quick1" id="dept1" placeholder="in">
+          <ul id="categorydepth">
+            <li class="categoryElementd">in</li>
+            <li class="categoryElementd">cm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="water">
+        <img class="waterImg" src="/assets/img/water.png">
+        <input type="number" class="wat" id="water" placeholder="Water week">
+        <div class="inch2">
+          <input type="text" class="wat1" id="title" placeholder="in">
+        </div>
+        <ul id="categoryWater"></ul>
+      </div>
+      <div class="sun">
+        <img class="sunImg" src="/assets/img/sun.png">
+        <input type="text" class="sunny" id="sun" placeholder="Sun">
+        <ul id="categorySun"></ul>
+      </div>
+      <div class="temperature">
+        <img class="tempImg" src="/assets/img/temperature.png">
+        <input type="text" class="temp" id="temp" placeholder="Growing Season">
+        <ul id="categoryTemp"></ul>
+      </div>
+      <div class="pest_disease">
+        <h2 class="pestInfo">Pests and Disease</h2>
+        <div class="pestdiv">
+          <h5 class="pests">Pests</h5>
+          <img src="/assets/img/edit.png" id="showPests" class="edit">
+        </div>
+        <div id="pestsSelected"></div>
+        <span class="pestData"></span>
+        <div class="diseasediv">
+          <h5 class="disease">Disease</h5>
+          <img src="/assets/img/edit.png" id="showDisease" class="edit">
+        </div>
+        <div id="diseaseSelected"></div>
+        <span class="diseaseData"></span>
+      </div>
+      <div class="detailInfo">
+        <h2 class="detail_info">Detailed Information</h2>
+        <div class="detailAll">
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="grow"
+            placeholder="Growing from Seed"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="planting"
+            placeholder="Planting Considerations"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="feed"
+            placeholder="Feeding"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="harv"
+            placeholder="Harvesting"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="stor"
+            placeholder="Storage"></textarea>
+        </div>
+      </div>
+      <div class="exit">
+        <button id="uploadAlldata" class="uploadAlldata" onclick="uploadData()">Upload</button>
+        <button class="close" id="close">Close</button>
+      </div>
+    </div>
+  </div>
+  <div id="edit_plant">
+    <h2 class="genInfos">Edit Plant</h2>
+    <h2 class="genInfo">General Information</h2>
+    <div id="nameplant">
+      <input type="text" class="gen" id="title2" placeholder="Title">
+      <div class="categ">
+        <input type="text" class="gen" id="category2" placeholder="Category">
+        <ul id="categoryContainer"></ul>
+      </div>
+      <textarea style="resize: none; height: 70px;" type="text" class="gen" id="description2"
+        placeholder="Description"></textarea>
+    </div>
+    <div id="icon_image">
+      <h2 class="iconInfo">Icon</h2>
+      <div class="iconlayout">
+        <span class="metaData2"></span>
+        <img src="/assets/img/add.png" class="selectIcon" onclick="selectIcon2()">
+        <input type="file" class="icon" id="icon2" onchange="getIconData2(event)" accept="image/*">
+      </div>
+    </div>
+    <div id="images_plants">
+      <h2 class="imageInfo">Images</h2>
+      <div class="imagelayout">
+        <input type="file" class="images" id="images2" onchange="getImageData2(event)" accept="image/*" multiple>
+        <span class="imageDa2"></span>
+        <button onclick="selectImage2()" class="selecImage">Select Image</button>
+      </div>
+    </div>
+    <div class="quick_info">
+      <h2 class="quickinfo">Quick Information</h2>
+      <div class="rangeSlide">
+        <img src="/assets/img/ruler.png" class="ruler">
+        <span id="rangeValue2">1/Square</span>
+        <input class="range" type="range" name="" value="5" min="0" max="11"
+          onchange="rangeSlide(parseInt(this.value))">
+      </div>
+      <div class="depth">
+        <img class="deptImg" src="/assets/img/depth.png">
+        <input type="number" class="quick" id="dept2" placeholder="Planting depth">
+        <div class="inch">
+          <input type="text" class="quick1" id="dept1" placeholder="in">
+          <ul id="categorydepth">
+            <li class="categoryElementd">in</li>
+            <li class="categoryElementd">cm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="water">
+        <img class="waterImg" src="/assets/img/water.png">
+        <input type="number" class="wat" id="water2" placeholder="Water week">
+        <div class="inch2">
+          <input type="text" class="wat1" id="title" placeholder="in">
+        </div>
+        <ul id="categoryWater"></ul>
+      </div>
+      <div class="sun">
+        <img class="sunImg" src="/assets/img/sun.png">
+        <input type="text" class="sunny" id="sun2" placeholder="Sun">
+        <ul id="categorySun"></ul>
+      </div>
+      <div class="temperature">
+        <img class="tempImg" src="/assets/img/temperature.png">
+        <input type="text" class="temp" id="temp2" placeholder="Growing Season">
+        <ul id="categoryTemp"></ul>
+      </div>
+      <div class="pest_disease">
+        <h2 class="pestInfo">Pests and Disease</h2>
+        <div class="pestdiv">
+          <h5 class="pests">Pests</h5>
+          <img src="/assets/img/edit.png" id="showPests" class="edit">
+        </div>
+        <div id="pestsSelected2"></div>
+        <span class="pestData"></span>
+        <div class="diseasediv">
+          <h5 class="disease">Disease</h5>
+          <img src="/assets/img/edit.png" id="showDisease" class="edit">
+        </div>
+        <div id="diseaseSelected2"></div>
+        <span class="diseaseData"></span>
+      </div>
+      <div class="detailInfo">
+        <h2 class="detail_info">Detailed Information</h2>
+        <div class="detailAll">
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="grow2"
+            placeholder="Growing from Seed"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="planting2"
+            placeholder="Planting Considerations"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="feed2"
+            placeholder="Feeding"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="harv2"
+            placeholder="Harvesting"></textarea>
+          <textarea style="resize: none; height: 70px;" type="text" class="detail" id="stor2"
+            placeholder="Storage"></textarea>
+        </div>
+      </div>
+      <div class="exit">
+        <button id="uploadAlldata" class="uploadAlldata" onclick="updateDataInFirebase()">Update</button>
+        <button class="close" id="close2">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="alert" id="alert">
+    <p class="successUpload">Data uploaded successfully!</p>
+    <button id="okayButton" class="okayButton">Okay</button>
+  </div>
+  <div class="pestBack" id="pestBack">
+    <div class="div">
+      <h3 class="textP">Pests</h3>
+      <img src="/assets/img/close.png" id="backPests">
+    </div>
+    <div class="pests2">
+      <h3 class="done" id="done">Done</h3>
+      <div id="pests"></div>
+    </div>
+  </div>
+  <div class="diseaseBack" id="diseaseBack">
+    <div class="div">
+      <h3 class="textD">Disease</h3>
+      <img src="/assets/img/close.png" id="backDisease">
+    </div>
+    <div class="disease2">
+      <h3 class="doned" id="doned">Done</h3>
+      <div id="disease">
+      </div>
+    </div>
+  </div>
+  <div class="uploadBar" id="uploadBar">
+    <p class="textUpload">Uploading ...</p>
+    <div class="bar" id="bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="percentage" id="percentage">0%</div>
+  </div>
+  <div class="removePlant" id="removePlant">
+    <p class="QA">Are you sure to delete?</p>
+    <div class="yesNo">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+  <div id="Pestdisplay"></div>
+  <img src="/assets/img/close.png" id="xButton">
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="/assets/js/plant.js"></script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agri-Advice</title>
+  <link rel="stylesheet" href="/assets/css/vendors.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="/assets/img/logo.png">
+    <a href="index.html" >
+        <span class="material-symbols-outlined">dashboard</span>
+        <h3>Dashboard</h3>
+    </a>
+    <a href="plant.html">
+      <span class="material-symbols-outlined">potted_plant</span>
+      <h3>Planting Guidance</h3>
+    </a>
+    <a href="pest.html">
+      <span class="material-symbols-outlined">emoji_nature</span>
+      <h3>Pest and Disease</h3>
+    </a>
+    <a href="news.html">
+      <span class="material-symbols-outlined">newspaper</span>
+      <h3>News Update</h3>
+    </a>
+    <a href="weather.html">
+      <span class="material-symbols-outlined">partly_cloudy_day</span>
+      <h3>Weather Update</h3>
+    </a>
+    <a href="market.html">
+      <span class="material-symbols-outlined">storefront</span>
+      <h3>Marketplace</h3>
+    </a>
+    <a href="vendors.html" class="active">
+      <span class="material-symbols-outlined">groups</span>
+      <h3>Vendors</h3>
+    </a>
+    <a href="#">
+      <span class="material-symbols-outlined">monitoring</span>
+      <h3>Price List</h3>
+    </a>
+    <a href="message.html">
+      <span class="material-symbols-outlined">chat</span>
+      <h3>Messages</h3>
+      <span class="message_count">14</span>
+    </a>
+    <a href="archieve.html">
+      <span class="material-symbols-outlined">archive</span>
+      <h3>Archive</h3>
+    </a>
+    <a id="logoutButton" href="#">
+      <span class="material-symbols-outlined">logout</span>
+      <h3>Logout</h3>
+    </a>
+  </div>
+  <div class="sidebar1">
+    <div class="menu">
+      <h2 class="vendors">Vendors</h2>
+      <div class="nav-1">
+        <div class="n1" id="p-1" onclick="ver()">Verified</div>
+        <div class="n1" id="v-1" onclick="notver()">Not Verified</div>
+      </div>
+      <div id="vendor"></div>
+      <div id="notVendor"></div>
+    </div>
+  </div>
+  <div id="vendorContainer"></div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firestore.js"></script>
+<script src="/assets/js/vendor.js"></script>
+
+</html>
